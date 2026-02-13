@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +15,7 @@
     --popover: 240 6% 9%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 270 70% 60%;
+    --primary: 142 70% 45%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 240 5% 14%;
@@ -24,7 +24,7 @@
     --muted: 240 5% 14%;
     --muted-foreground: 240 5% 55%;
 
-    --accent: 270 70% 60%;
+    --accent: 142 70% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
@@ -32,20 +32,20 @@
 
     --border: 240 5% 16%;
     --input: 240 5% 16%;
-    --ring: 270 70% 60%;
+    --ring: 142 70% 45%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 240 6% 8%;
     --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 270 70% 60%;
+    --sidebar-primary: 142 70% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 5% 14%;
     --sidebar-accent-foreground: 0 0% 90%;
     --sidebar-border: 240 5% 16%;
-    --sidebar-ring: 270 70% 60%;
+    --sidebar-ring: 142 70% 45%;
 
-    --glow-primary: 0 0 20px hsl(270 70% 60% / 0.3);
+    --glow-primary: 0 0 20px hsl(142 70% 45% / 0.3);
     --glow-white: 0 0 15px hsl(0 0% 100% / 0.1);
   }
 }
@@ -61,22 +61,32 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', sans-serif;
   }
+  .font-minecraft {
+    font-family: 'Press Start 2P', monospace;
+  }
 }
 
 @layer utilities {
-  .glow-purple {
-    box-shadow: 0 0 20px hsl(270 70% 60% / 0.3), 0 0 60px hsl(270 70% 60% / 0.1);
+  .glow-green {
+    box-shadow: 0 0 20px hsl(142 70% 45% / 0.3), 0 0 60px hsl(142 70% 45% / 0.1);
   }
   .glow-white {
     box-shadow: 0 0 15px hsl(0 0% 100% / 0.15), 0 0 40px hsl(0 0% 100% / 0.05);
   }
-  .glow-text-purple {
-    text-shadow: 0 0 20px hsl(270 70% 60% / 0.5);
+  .glow-text-green {
+    text-shadow: 0 0 20px hsl(142 70% 45% / 0.5);
   }
   .glow-text-white {
     text-shadow: 0 0 15px hsl(0 0% 100% / 0.3);
   }
   .glass-card {
     @apply bg-card/60 backdrop-blur-xl border border-border/50;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
   }
 }

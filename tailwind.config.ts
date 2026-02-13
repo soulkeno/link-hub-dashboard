@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         display: ["Space Grotesk", "sans-serif"],
+        minecraft: ["'Press Start 2P'", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",

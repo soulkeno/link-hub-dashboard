@@ -77,6 +77,54 @@ export type Database = {
         }
         Relationships: []
       }
+      projects: {
+        Row: {
+          created_at: string
+          description: string | null
+          download_count: number | null
+          file_url: string | null
+          icon_url: string | null
+          id: string
+          like_count: number | null
+          minecraft_versions: string[] | null
+          status: string
+          title: string
+          type: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          download_count?: number | null
+          file_url?: string | null
+          icon_url?: string | null
+          id?: string
+          like_count?: number | null
+          minecraft_versions?: string[] | null
+          status?: string
+          title: string
+          type: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          download_count?: number | null
+          file_url?: string | null
+          icon_url?: string | null
+          id?: string
+          like_count?: number | null
+          minecraft_versions?: string[] | null
+          status?: string
+          title?: string
+          type?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       social_links: {
         Row: {
           created_at: string
@@ -142,6 +190,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      increment_download_count: {
+        Args: { project_id: string }
+        Returns: undefined
+      }
       increment_view_count: {
         Args: { profile_username: string }
         Returns: undefined
